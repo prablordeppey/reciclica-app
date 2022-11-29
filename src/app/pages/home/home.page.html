@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="success">
-    <ion-buttons>
-      <ion-menu-button></ion-menu-button>
+    <ion-buttons slot="start">
+      <ion-menu-button title=""></ion-menu-button>
     </ion-buttons>
     <ion-title>Reciclical</ion-title>
   </ion-toolbar>
@@ -30,13 +30,13 @@
     </ion-card-header>
 
     <!-- for footer to appear -->
-    <ion-button footer color="success" fill="clear" size="full">
+    <ion-button (click)="goToPickupCalls()" footer color="success" fill="clear" size="full">
       SEE ALL...
     </ion-button>
 
   </app-pickup-call-card>
   
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab (click)="goToPickupCall()" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
