@@ -12,15 +12,14 @@
             <ion-label position="floating">Email</ion-label>
             <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
           </ion-item>
-          <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors && !!form.get('email')?.errors?.['required']" >Email is mandatory</ion-label>
-          <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors && !!form.get('email')?.errors?.['email']" >Email is invalid</ion-label>
-
+          <app-error-message message="Email is mandatory" error="required" [field]="form.get('email')"></app-error-message>
+          <app-error-message message="Email is invalid" error="email" [field]="form.get('email')"></app-error-message>
+          
           <ion-item>
             <ion-label position="floating">Password</ion-label>
             <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
           </ion-item>
-          <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors && !!form.get('password')?.errors?.['required']" >Password is mandatory</ion-label>
-
+          <app-error-message message="Password is mandatory" error="required" [field]="form.get('password')"></app-error-message>
 
           <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email')?.valid">Forgot email/password</ion-button>
           <ion-button (click)="login()" color="success" size="full" [disabled]="!form.valid">LOGIN</ion-button>
