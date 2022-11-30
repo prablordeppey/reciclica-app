@@ -1,4 +1,6 @@
+import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
@@ -12,7 +14,7 @@ describe('LoginPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), ReactiveFormsModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginPage);
@@ -39,6 +41,11 @@ describe('LoginPage', () => {
     component.register();
 
     expect(router.navigate).toHaveBeenCalledWith(['register'])
+  })
+
+  it("should create a form on init",()=>{
+    component.ngOnInit();
+    expect(component.form).not.toBeNull();
   })
 
 });

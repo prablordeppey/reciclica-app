@@ -1,6 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { PickupCallCardComponent } from 'src/app/components/pickup-call-card/pickup-call-card.component';
+
 
 import { HomePage } from './home.page';
 
@@ -11,8 +14,10 @@ describe('HomePage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [ HomePage, PickupCallCardComponent ],
+      imports: [
+        IonicModule.forRoot()
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);

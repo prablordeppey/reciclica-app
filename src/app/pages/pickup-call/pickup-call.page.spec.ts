@@ -16,11 +16,19 @@ describe('PickupCallPage', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(PickupCallPage);
+    router = TestBed.get(Router);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
+  it("it should go to home on create pickup call", ()=>{
+
+    spyOn(router, 'navigate');
+
+    component.newPickupCall();
+
+    expect(router.navigate).toHaveBeenCalledWith(['home']);
+  })
+
 });
